@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1800px" height="300px" viewBox="0 0 1800 300" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="pips" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="pips-6" transform="translate(1533.000000, 15.000000)" fill="currentColor">
+            <g id="pip" transform="translate(154.000000, 190.000000)">
+                <circle id="Oval" cx="39.9092971" cy="39.9092971" r="39.9092971"></circle>
+            </g>
+            <g id="pip" transform="translate(0.000000, 190.000000)">
+                <circle id="Oval" cx="39.9092971" cy="39.9092971" r="39.9092971"></circle>
+            </g>
+            <g id="pip" transform="translate(0.000000, 95.000000)">
+                <circle id="Oval" cx="39.9092971" cy="39.9092971" r="39.9092971"></circle>
+            </g>
+            <g id="pip">
+                <circle id="Oval" cx="39.9092971" cy="39.9092971" r="39.9092971"></circle>
+            </g>
+            <g id="pip" transform="translate(154.000000, 0.000000)">
+                <circle id="Oval" cx="39.9092971" cy="39.9092971" r="39.9092971"></circle>
+            </g>
+            <g id="pip" transform="translate(154.000000, 95.000000)">
+                <circle id="Oval" cx="39.9092971" cy="39.9092971" r="39.9092971"></circle>
+            </g>
+        </g>
+        <g id="pips-5" transform="translate(1218.000000, 18.000000)" fill="currentColor">
+            <g id="pip" transform="translate(169.000000, 169.000000)">
+                <circle id="Oval" cx="39.9092971" cy="39.9092971" r="39.9092971"></circle>
+            </g>
+            <g id="pip" transform="translate(15.000000, 169.000000)">
+                <circle id="Oval" cx="39.9092971" cy="39.9092971" r="39.9092971"></circle>
+            </g>
+            <g id="pip" transform="translate(92.000000, 92.000000)">
+                <circle id="Oval" cx="39.9092971" cy="39.9092971" r="39.9092971"></circle>
+            </g>
+            <g id="pip" transform="translate(15.000000, 15.000000)">
+                <circle id="Oval" cx="39.9092971" cy="39.9092971" r="39.9092971"></circle>
+            </g>
+            <g id="pip" transform="translate(169.000000, 15.000000)">
+                <circle id="Oval" cx="39.9092971" cy="39.9092971" r="39.9092971"></circle>
+            </g>
+        </g>
+        <g id="pips-4" transform="translate(918.000000, 18.000000)" fill="currentColor">
+            <g id="pip" transform="translate(169.000000, 169.000000)">
+                <circle id="Oval" cx="39.9092971" cy="39.9092971" r="39.9092971"></circle>
+            </g>
+            <g id="pip" transform="translate(15.000000, 169.000000)">
+                <circle id="Oval" cx="39.9092971" cy="39.9092971" r="39.9092971"></circle>
+            </g>
+            <g id="pip" transform="translate(15.000000, 15.000000)">
+                <circle id="Oval" cx="39.9092971" cy="39.9092971" r="39.9092971"></circle>
+            </g>
+            <g id="pip" transform="translate(169.000000, 15.000000)">
+                <circle id="Oval" cx="39.9092971" cy="39.9092971" r="39.9092971"></circle>
+            </g>
+        </g>
+        <g id="pips-3" transform="translate(618.000000, 18.000000)" fill="currentColor">
+            <g id="pip" transform="translate(15.000000, 169.000000)">
+                <circle id="Oval" cx="39.9092971" cy="39.9092971" r="39.9092971"></circle>
+            </g>
+            <g id="pip" transform="translate(92.000000, 92.000000)">
+                <circle id="Oval" cx="39.9092971" cy="39.9092971" r="39.9092971"></circle>
+            </g>
+            <g id="pip" transform="translate(169.000000, 15.000000)">
+                <circle id="Oval" cx="39.9092971" cy="39.9092971" r="39.9092971"></circle>
+            </g>
+        </g>
+        <g id="pips-2" transform="translate(318.000000, 18.000000)" fill="currentColor">
+            <g id="pip" transform="translate(15.000000, 169.000000)">
+                <circle id="Oval" cx="39.9092971" cy="39.9092971" r="39.9092971"></circle>
+            </g>
+            <g id="pip" transform="translate(169.000000, 15.000000)">
+                <circle id="Oval" cx="39.9092971" cy="39.9092971" r="39.9092971"></circle>
+            </g>
+        </g>
+        <g id="pips-1" transform="translate(18.000000, 18.000000)" fill="currentColor">
+            <g id="pip" transform="translate(92.000000, 92.000000)">
+                <circle id="Oval" cx="39.9092971" cy="39.9092971" r="39.9092971"></circle>
+            </g>
+        </g>
+    </g>
+</svg>
