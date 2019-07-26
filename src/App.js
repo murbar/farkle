@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
+import Header from './components/Header';
+import Controls from './components/Controls';
+import Hand from './components/Hand';
+import Bank from './components/Bank';
 
 const randomDie = () => Math.ceil(Math.random() * 6);
 
@@ -12,60 +16,6 @@ const removeDie = (hand, value) => {
   const i = hand.indexOf(value);
   if (i > -1) hand.splice(i, 1);
   return [...hand];
-};
-
-const Header = () => {
-  return (
-    <header>
-      <h1>Farkle</h1>
-    </header>
-  );
-};
-
-const DieStyles = styled.div`
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  background: #ccc;
-  border-radius: 0.5rem;
-  width: 3rem;
-  height: 3rem;
-  font-size: 2em;
-  margin: 0.5rem;
-`;
-
-const Die = ({ value, handleClick }) => {
-  return <DieStyles onClick={() => handleClick(value)}>{value}</DieStyles>;
-};
-
-const Hand = ({ dice, addToBank }) => {
-  return (
-    <div>
-      <h3>Hand</h3>
-      {dice.map((v, i) => (
-        <Die key={`${i}${v}`} value={v} handleClick={addToBank} />
-      ))}
-    </div>
-  );
-};
-
-const Bank = ({ dice, remove }) => {
-  return (
-    <div>
-      <h3>Bank</h3>
-      {dice.map((v, i) => (
-        <Die key={`${i}${v}`} value={v} handleClick={remove} />
-      ))}
-    </div>
-  );
-};
-
-const Controls = ({ callbacks }) => {
-  return (
-    <div>
-      <button onClick={callbacks.rollDice}>Roll</button>
-    </div>
-  );
 };
 
 function App() {
