@@ -59,8 +59,8 @@ function App() {
     <div>
       <Header />
       <main>
-        <Bank dice={gameState.diceInBank} remove={removeFromBank} />
-        <Hand dice={gameState.diceInHand} addToBank={addToBank} />
+        <Bank gameState={gameState} remove={removeFromBank} />
+        <Hand gameState={gameState} addToBank={addToBank} />
         <Controls callbacks={{ rollDice }} />
       </main>
     </div>
