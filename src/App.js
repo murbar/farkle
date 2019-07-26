@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Controls from './components/Controls';
 import Hand from './components/Hand';
 import Bank from './components/Bank';
+import useHotKeys from './hooks/useHotKeys';
 
 const randomDie = () => Math.ceil(Math.random() * 6);
 
@@ -46,6 +47,11 @@ function App() {
       diceInBank: removeDie(prev.diceInBank, value)
     }));
   };
+
+  useHotKeys({
+    // debug
+    d: () => console.log(gameState)
+  });
 
   return (
     <div>
