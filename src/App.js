@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 const randomDie = () => Math.ceil(Math.random() * 6);
 
-const newHand = () =>
-  Array(6)
+const newHand = (numDice = 6) =>
+  Array(numDice)
     .fill(null)
     .map(() => randomDie());
 
