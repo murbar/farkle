@@ -6,6 +6,7 @@ import Controls from './components/Controls';
 import Hand from './components/Hand';
 import Bank from './components/Bank';
 import useHotKeys from './hooks/useHotKeys';
+import Score from './components/Score';
 
 const randomDie = () => Math.ceil(Math.random() * 6);
 
@@ -20,9 +21,10 @@ const removeDie = (hand, value) => {
   return [...hand];
 };
 
-function App() {
+export default function App() {
   const [gameState, setGameState] = useState({
     gameId: uuid(),
+    rounds: Array(10).fill(null),
     diceInHand: newHand(),
     diceInBank: []
   });
@@ -59,6 +61,7 @@ function App() {
     <div>
       <Header />
       <main>
+        <Score gameState={gameState} />
         <Bank gameState={gameState} remove={removeFromBank} />
         <Hand gameState={gameState} addToBank={addToBank} />
         <Controls callbacks={{ rollDice }} />
@@ -66,5 +69,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
