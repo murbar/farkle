@@ -8,6 +8,8 @@ import Bank from './components/Bank';
 import useHotKeys from './hooks/useHotKeys';
 import Score from './components/Score';
 
+import { sumArray } from './helpers';
+
 const randomDie = () => Math.ceil(Math.random() * 6);
 
 const newHand = (numDice = 6) =>
@@ -50,6 +52,20 @@ export default function App() {
       diceInHand: [...prev.diceInHand, value],
       diceInBank: removeDie(prev.diceInBank, value)
     }));
+  };
+
+  const endRound = () => {
+    setGameState(prev => {
+      const currentRound = prev.rounds.indexOf(null);
+      const rounds = prev.rounds;
+      rounds[currentRound] = sumArray(prev.diceInBank);
+      return {
+        ...prev,
+        diceInHand: newHand(),
+        diceInBank: [],
+        rounds
+      };
+    });
   };
 
   useHotKeys({
