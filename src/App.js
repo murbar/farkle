@@ -8,6 +8,12 @@ const newHand = (numDice = 6) =>
     .fill(null)
     .map(() => randomDie());
 
+const removeDie = (hand, value) => {
+  const i = hand.indexOf(value);
+  if (i > -1) hand.splice(i, 1);
+  return [...hand];
+};
+
 const Header = () => {
   return (
     <header>
@@ -29,15 +35,26 @@ const DieStyles = styled.div`
 `;
 
 const Die = ({ value, handleClick }) => {
-  return <DieStyles onClick={handleClick}>{value}</DieStyles>;
+  return <DieStyles onClick={() => handleClick(value)}>{value}</DieStyles>;
 };
 
-const Hand = ({ dice }) => {
+const Hand = ({ dice, addToBank }) => {
   return (
     <div>
       <h3>Hand</h3>
-      {dice.map(d => (
-        <Die value={d} />
+      {dice.map(v => (
+        <Die value={v} handleClick={addToBank} />
+      ))}
+    </div>
+  );
+};
+
+const Bank = ({ dice, remove }) => {
+  return (
+    <div>
+      <h3>Bank</h3>
+      {dice.map(v => (
+        <Die value={v} handleClick={remove} />
       ))}
     </div>
   );
@@ -53,16 +70,28 @@ const Controls = ({ callbacks }) => {
 
 function App() {
   const [diceInHand, setDiceInHand] = useState(newHand());
+  const [diceInBank, setDiceInBank] = useState([]);
 
   const rollDice = () => {
     setDiceInHand(prev => newHand(prev.length));
+  };
+
+  const addToBank = value => {
+    setDiceInBank(prev => [...prev, value]);
+    setDiceInHand(prev => removeDie(prev, value));
+  };
+
+  const removeFromBank = value => {
+    setDiceInBank(prev => removeDie(prev, value));
+    setDiceInHand(prev => [...prev, value]);
   };
 
   return (
     <div>
       <Header />
       <main>
-        <Hand dice={diceInHand} />
+        <Bank dice={diceInBank} remove={removeFromBank} />
+        <Hand dice={diceInHand} addToBank={addToBank} />
         <Controls callbacks={{ rollDice }} />
       </main>
     </div>
