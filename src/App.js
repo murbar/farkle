@@ -19,29 +19,40 @@ const removeDie = (hand, value) => {
 };
 
 function App() {
-  const [diceInHand, setDiceInHand] = useState(newHand());
-  const [diceInBank, setDiceInBank] = useState([]);
+  const [gameState, setGameState] = useState({
+    diceInHand: newHand(),
+    diceInBank: []
+  });
 
   const rollDice = () => {
-    setDiceInHand(prev => newHand(prev.length));
+    setGameState(prev => ({
+      ...prev,
+      diceInHand: newHand(prev.diceInHand.length)
+    }));
   };
 
   const addToBank = value => {
-    setDiceInBank(prev => [...prev, value]);
-    setDiceInHand(prev => removeDie(prev, value));
+    setGameState(prev => ({
+      ...prev,
+      diceInHand: removeDie(prev.diceInHand, value),
+      diceInBank: [...prev.diceInBank, value]
+    }));
   };
 
   const removeFromBank = value => {
-    setDiceInBank(prev => removeDie(prev, value));
-    setDiceInHand(prev => [...prev, value]);
+    setGameState(prev => ({
+      ...prev,
+      diceInHand: [...prev.diceInHand, value],
+      diceInBank: removeDie(prev.diceInBank, value)
+    }));
   };
 
   return (
     <div>
       <Header />
       <main>
-        <Bank dice={diceInBank} remove={removeFromBank} />
-        <Hand dice={diceInHand} addToBank={addToBank} />
+        <Bank dice={gameState.diceInBank} remove={removeFromBank} />
+        <Hand dice={gameState.diceInHand} addToBank={addToBank} />
         <Controls callbacks={{ rollDice }} />
       </main>
     </div>
