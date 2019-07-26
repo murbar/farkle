@@ -64,7 +64,7 @@ export default function App() {
         <Score gameState={gameState} />
         <Bank gameState={gameState} remove={removeFromBank} />
         <Hand gameState={gameState} addToBank={addToBank} />
-        <Controls callbacks={{ rollDice }} />
+        <Controls gameState={gameState} callbacks={{ rollDice, endRound }} />
       </main>
     </div>
   );
