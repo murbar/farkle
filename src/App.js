@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import uuid from 'uuid/v4';
 // import styled from 'styled-components';
 import Header from './components/Header';
 import Controls from './components/Controls';
@@ -21,6 +22,7 @@ const removeDie = (hand, value) => {
 
 function App() {
   const [gameState, setGameState] = useState({
+    gameId: uuid(),
     diceInHand: newHand(),
     diceInBank: []
   });
