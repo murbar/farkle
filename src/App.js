@@ -42,8 +42,8 @@ const Hand = ({ dice, addToBank }) => {
   return (
     <div>
       <h3>Hand</h3>
-      {dice.map(v => (
-        <Die value={v} handleClick={addToBank} />
+      {dice.map((v, i) => (
+        <Die key={`${i}${v}`} value={v} handleClick={addToBank} />
       ))}
     </div>
   );
@@ -53,8 +53,8 @@ const Bank = ({ dice, remove }) => {
   return (
     <div>
       <h3>Bank</h3>
-      {dice.map(v => (
-        <Die value={v} handleClick={remove} />
+      {dice.map((v, i) => (
+        <Die key={`${i}${v}`} value={v} handleClick={remove} />
       ))}
     </div>
   );
