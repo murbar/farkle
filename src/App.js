@@ -1,4 +1,9 @@
-import React from 'react';
+const randomDie = () => Math.ceil(Math.random() * 6);
+
+const newHand = () =>
+  Array(6)
+    .fill(null)
+    .map(() => randomDie());
 
 function App() {
   return (
